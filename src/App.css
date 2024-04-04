@@ -1,0 +1,30 @@
+/* App.css */
+.centered-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    /* Use the full height of the viewport */
+}
+
+.logo {
+    width: auto;
+    /* Adjust based on the size of your logo */
+    height: auto;
+    opacity: 0;
+}
+
+.word {
+    font-size: 24px;
+    /* Adjust based on your preference */
+    font-weight: bold;
+    opacity: 0;
+    transform: translateY(-50px);
+}
+
+.see_more {
+    bottom: 0;
+    position: absolute;
+    margin-bottom: 40px;
+}

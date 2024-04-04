@@ -1,0 +1,12 @@
+/* Add to your CSS file */
+.slide-container {
+    max-width: 300px;
+    margin: auto;
+}
+
+.each-slide img {
+    width: 50%;
+    /* Ensure images cover the slide */
+    height: 200px;
+    /* Maintain aspect ratio */
+}
