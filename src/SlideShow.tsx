@@ -7,15 +7,12 @@ import ImageGallery from "react-image-gallery";
 const slideImages = [
     {
         original: image1,
-        thumbnail: image1,
     },
     {
         original: image2,
-        thumbnail: image2,
     },
     {
         original: image3,
-        thumbnail: image3,
     },
 ];
 

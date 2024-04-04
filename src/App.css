@@ -10,21 +10,33 @@
 
 .logo {
     width: auto;
-    /* Adjust based on the size of your logo */
     height: auto;
     opacity: 0;
 }
 
+
+.ori {
+    transform: translateY(-50px);
+}
+
 .word {
-    font-size: 24px;
+    font-size: 3.5em;
     /* Adjust based on your preference */
     font-weight: bold;
+    word-spacing: 10px;
     opacity: 0;
     transform: translateY(-50px);
 }
 
 .see_more {
+    display: flex;
+    flex-direction: column;
     bottom: 0;
     position: absolute;
     margin-bottom: 40px;
+    align-items: center;
+}
+
+.downIcon {
+    width: 15%;
 }

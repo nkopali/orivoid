@@ -2,11 +2,9 @@
 .slide-container {
     max-width: 300px;
     margin: auto;
+    color: white;
 }
 
-.each-slide img {
-    width: 50%;
-    /* Ensure images cover the slide */
-    height: 200px;
-    /* Maintain aspect ratio */
-}
+/* .image-gallery-bullet {
+    hover
+} */
