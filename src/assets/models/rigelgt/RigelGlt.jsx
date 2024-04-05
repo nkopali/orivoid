@@ -6,7 +6,7 @@ Command: npx gltfjsx@6.2.16 rigel.gltf
 import React, { useRef } from 'react'
 import { useGLTF } from '@react-three/drei'
 
-export default function Model(props) {
+export function Model(props) {
   const { nodes, materials } = useGLTF('/rigel.gltf')
   return (
     <group {...props} dispose={null}>
