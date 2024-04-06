@@ -32,6 +32,7 @@ function CameraFOVAnimation() {
         gsap.to(camera, {
             fov: 40,
             duration: 10,
+            ease: 'power4.out',
             onUpdate: () => camera.updateProjectionMatrix(),
             scrollTrigger: {
                 trigger: '.rigel-canvas',
@@ -61,7 +62,7 @@ function Rigel() {
                     art at its finest!</p>
             </div>
             <div className="image-side">
-                <Canvas camera={{ position: [2, 1, 1], fov: 2 }} style={{ backgroundColor: '#E5E5E5', width: '90%', height: "90%" }} className='rigel-canvas'>
+                <Canvas camera={{ position: [2, 1, 1], fov: 1 }} style={{ backgroundColor: '#E5E5E5', width: '90%', height: "90%" }} className='rigel-canvas'>
                     <OrbitControls enablePan={false} enableRotate={true} autoRotate={true} />
                     <ambientLight intensity={0.5} />
                     <Rigel3DCentre />
