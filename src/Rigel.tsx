@@ -33,33 +33,17 @@ function CameraFOVAnimation() {
             fov: 40,
             duration: 10,
             onUpdate: () => camera.updateProjectionMatrix(),
+            scrollTrigger: {
+                trigger: '.rigel-canvas',
+            }
         });
     }, [camera]);
 
     return null;
 }
 
-function useIsVisible(ref) {
-    const [isIntersecting, setIntersecting] = useState(false);
-
-    useEffect(() => {
-        const observer = new IntersectionObserver(([entry]) =>
-            setIntersecting(entry.isIntersecting)
-        );
-
-        observer.observe(ref.current);
-
-        return () => {
-            observer.disconnect();
-        };
-    }, [ref]);
-
-    return isIntersecting;
-}
 
 function Rigel() {
-    const canvas = useRef();
-    const isVisible = useIsVisible(canvas);
 
     return (
         <div className="container">
@@ -77,13 +61,13 @@ function Rigel() {
                     art at its finest!</p>
             </div>
             <div className="image-side">
-                <Canvas ref={canvas} camera={{ position: [2, 1, 1], fov: 2 }} style={{ backgroundColor: '#E5E5E5', width: '90%', height: "90%" }} className='rigel-canvas'>
+                <Canvas camera={{ position: [2, 1, 1], fov: 2 }} style={{ backgroundColor: '#E5E5E5', width: '90%', height: "90%" }} className='rigel-canvas'>
                     <OrbitControls enablePan={false} enableRotate={true} autoRotate={true} />
                     <ambientLight intensity={0.5} />
                     <Rigel3DCentre />
                     <directionalLight position={[5, 10, 0]} intensity={1} />
                     <directionalLight position={[-5, 10, 0]} intensity={1} />
-                    {isVisible ? <CameraFOVAnimation /> : null}
+                    <CameraFOVAnimation />
                 </Canvas>
                 {/* <Slideshow /> */}
             </div>
