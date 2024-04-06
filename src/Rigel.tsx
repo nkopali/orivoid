@@ -6,9 +6,10 @@ import { Box, OrbitControls, useGLTF, useProgress } from '@react-three/drei';
 import { FBXLoader } from 'three/examples/jsm/loaders/FBXLoader.js';
 import { AmbientLight } from 'three';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
-import Rigel3DCentre from './Rigel3DCentre';
 import { Suspense, useEffect, useLayoutEffect, useRef, useState } from 'react';
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import RigelCompressed from './RigelCompressed';
+
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -65,7 +66,7 @@ function Rigel() {
                     <Suspense fallback={null}>
                         <OrbitControls enablePan={false} enableRotate={true} autoRotate={true} />
                         <ambientLight intensity={0.5} />
-                        <Rigel3DCentre />
+                        <RigelCompressed />
                         <directionalLight position={[5, 10, 0]} intensity={1} />
                         <directionalLight position={[-5, 10, 0]} intensity={1} />
                         <CameraFOVAnimation />
