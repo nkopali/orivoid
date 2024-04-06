@@ -2,13 +2,12 @@ import './Rigel.css';
 import { Slideshow } from './SlideShow';
 import { gsap } from 'gsap';
 import { Canvas, useLoader, useThree } from '@react-three/fiber'
-import { Box, OrbitControls, useGLTF } from '@react-three/drei';
+import { Box, OrbitControls, useGLTF, useProgress } from '@react-three/drei';
 import { FBXLoader } from 'three/examples/jsm/loaders/FBXLoader.js';
 import { AmbientLight } from 'three';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
-import Rigel3D from './Rigel3D';
 import Rigel3DCentre from './Rigel3DCentre';
-import { useEffect, useLayoutEffect, useRef, useState } from 'react';
+import { Suspense, useEffect, useLayoutEffect, useRef, useState } from 'react';
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -63,17 +62,20 @@ function Rigel() {
             </div>
             <div className="image-side">
                 <Canvas camera={{ position: [2, 1, 1], fov: 1 }} style={{ backgroundColor: '#E5E5E5', width: '90%', height: "90%" }} className='rigel-canvas'>
-                    <OrbitControls enablePan={false} enableRotate={true} autoRotate={true} />
-                    <ambientLight intensity={0.5} />
-                    <Rigel3DCentre />
-                    <directionalLight position={[5, 10, 0]} intensity={1} />
-                    <directionalLight position={[-5, 10, 0]} intensity={1} />
-                    <CameraFOVAnimation />
+                    <Suspense fallback={null}>
+                        <OrbitControls enablePan={false} enableRotate={true} autoRotate={true} />
+                        <ambientLight intensity={0.5} />
+                        <Rigel3DCentre />
+                        <directionalLight position={[5, 10, 0]} intensity={1} />
+                        <directionalLight position={[-5, 10, 0]} intensity={1} />
+                        <CameraFOVAnimation />
+                    </Suspense>
                 </Canvas>
                 {/* <Slideshow /> */}
             </div>
         </div>
     );
 }
+
 
 export default Rigel;

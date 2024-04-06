@@ -11,8 +11,6 @@ function App() {
   const textRef = useRef(null);
 
   useEffect(() => {
-    // GSAP animation
-
     const split = new SplitType(".text", { types: "words", wordClass: "word" });
 
     gsap.to(".word", {
