@@ -22,7 +22,7 @@
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/yourusername/orivoid.git
+   git clone https://github.com/nkopali/orivoid.git
    ```
 
 2. Navigate to the project directory:
@@ -49,8 +49,7 @@ npm run dev
 yarn dev
 ```
 
-The app will be accessible at `http://localhost:3000`.
-
+The app will be accessible at `http://localhost:5173`.
 
 
 ## License
